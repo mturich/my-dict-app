@@ -1,0 +1,54 @@
+
+.Cards{
+  font-family: Cavea, sans-serif;
+  font-size: clamp(1rem,1.2rem,1.5rem);
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  min-height: 26rem;
+  /*minHeight: clamp(60%;70%;80%);*/
+  max-height: 80%;
+  overflow-x: auto;
+
+  margin: auto 6rem;
+
+  background-color: #FFFF88;
+  border: 1px solid black;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
+.CardMeaning{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 15%;
+  margin: auto;
+  border-bottom: 1px solid black;
+  font-size: 1.5rem;
+  text-decoration: underline
+
+}
+.CardOrigin{
+  height: 80%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  margin: auto;
+  padding:  0.5em 1em;
+}
+
+.wrapper{
+  display: flex;
+  justify-content: center;
+  height: 32rem;
+  width: 90%;
+
+  background-color: #ebe6e6;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  margin: 0 auto;
+  box-shadow: 0 0 0 5px;
+}
