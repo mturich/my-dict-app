@@ -32,7 +32,9 @@ function GetDataFromServer({ apiURL }) {
 
   const content = meanings.map((meaning, index) => (
     <div className="Cards">
-      <div key={meaning.label} value={meaning.label} className="CardMeaning">
+      <div key={meaning.label}
+        value={meaning.label}
+        className="CardMeaning">
         <span style={{ padding: '1rem' }}>Meaning {index + 1}:</span>
         <p>{meaning.word}</p>
       </div>

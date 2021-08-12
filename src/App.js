@@ -2,15 +2,12 @@ import React, { useState } from 'react';
 import { Container } from '@material-ui/core';
 
 import Header from './components/header/Header.js';
-import GetDataFromServer from './adapters/loadDataFromServer.js';
+import MeaningCards from './adapters/MeaningCards.js';
 //import './App.js';
 
 function App() {
   const [category, setCategory] = useState('en');
-  const [word, setWord] = useState('');
-
-  
-  const inputText = 'plane';
+  const [word, setWord] = useState(' ');
   
   const API_URL = `https://api.dictionaryapi.dev/api/v2/entries/${category}/${word}`;
   console.log(API_URL)
@@ -27,7 +24,7 @@ function App() {
           word={word}
           setWord={setWord}
         />
-        <GetDataFromServer apiURL={API_URL} />
+        <MeaningCards apiURL={API_URL} />
       </Container>
     </div>
   );
