@@ -31,23 +31,18 @@ function GetDataFromServer({ apiURL }) {
   }, [apiURL]);
 
   const content = meanings.map((meaning, index) => (
-    <div className="Cards">
-      {/* <div key={meaning.label}
-        value={meaning.label}
-        className="CardMeaning">
-        <span style={{ padding: '1rem' }}>Meaning {index + 1}:</span>
-        {meaning.word}
-      </div> */}
-
+    <div id="CardsBackground">
+      <div id="CardHeading">
+          <span style={{ padding: '1rem' }}>Meaning {index + 1}:</span>{meaning.word}
+            </div>
+      
       <div
         key={meaning.label}
         value={meaning.label}
-        className="CardContext">
+        id="CardContext">
         <div style={{ maxHeight: '100%' }}>
           
-            <div className="CardHeading">
-          <span style={{ padding: '1rem' }}>Meaning {index + 1}:</span>{meaning.word}
-            </div>
+            
             <div style={{ margin: '0' }}>
             {meaning.meanings.map((typ) => (
               <>
@@ -94,8 +89,8 @@ function GetDataFromServer({ apiURL }) {
 // design for dummy divs in order to get a margin btw. the scrolling frame and the cards
 const style = {
   height: '26rem',
-  width: '2rem',
-  margin: '0 1rem',
+  width: '0.1rem',
+  margin: '0 0.1rem',
   border: '1px solid #ebe6e6',
   backgroundColor: '#ebe6e6',
 };

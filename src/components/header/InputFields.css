@@ -1,0 +1,55 @@
+.InputFields {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center;
+  text-align: center; */
+  margin: auto;
+}
+
+
+.inputs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  
+
+}
+
+.inputs > * {
+  flex-basis: calc(calc(440px - 100%) * 999);
+  flex-grow: 1;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-bottom: auto;
+}
+
+.MuiFormControl-root {
+  margin-block: 1em;
+  margin-top: auto;
+}
+
+
+@media screen and (min-width: 33em) {
+.InputFields{
+  /* margin-block: 2em; */
+}
+
+
+  .inputs {
+
+    margin: auto;
+
+  }
+
+  .inputs > div {
+    max-width: 30%;
+  }
+
+  .inputs > div:is(.search) {
+    max-width: 60%;
+  } 
+}

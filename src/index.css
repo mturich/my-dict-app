@@ -3,6 +3,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
 
+:root{
+  --BreakPointScreen: 33em;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -20,23 +24,5 @@ body {
 }
 
 *{
-  border: 1px solid black; 
-}
-
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  flex-wrap: wrap;
-  margin: 1rem auto;
-}
-
-
-ul {
-  padding-block: 1rem;
-}
-
-li {
-  list-style-type: none;
+  /* border: 1px solid black;  */
 }
