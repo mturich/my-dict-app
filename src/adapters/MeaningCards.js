@@ -2,13 +2,14 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './MeaningCards.css';
 
-function GetDataFromServer({ apiURL }) {
-  const [meanings, setMeanings] = useState([]);
+function MeaningCards({ word, category, setMeanings, meanings }) {
+  const API_URL = `https://api.dictionaryapi.dev/api/v2/entries/${category}/${word}`;
+  console.log(API_URL);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await axios.get(apiURL);
+        const data = await axios.get(API_URL);
         console.log(data.data);
         setMeanings(data.data);
       } catch (error) {
@@ -28,22 +29,18 @@ function GetDataFromServer({ apiURL }) {
     };
 
     fetchData();
-  }, [apiURL]);
+  }, [API_URL, setMeanings]);
 
   const content = meanings.map((meaning, index) => (
     <div id="CardsBackground">
       <div id="CardHeading">
-          <span style={{ padding: '1rem' }}>Meaning {index + 1}:</span>{meaning.word}
-            </div>
-      
-      <div
-        key={meaning.label}
-        value={meaning.label}
-        id="CardContext">
+        <span style={{ padding: '1rem' }}>Meaning {index + 1}:</span>
+        {meaning.word}
+      </div>
+
+      <div key={meaning.label} value={meaning.label} id="CardContext">
         <div style={{ maxHeight: '100%' }}>
-          
-            
-            <div style={{ margin: '0' }}>
+          <div style={{ margin: '0' }}>
             {meaning.meanings.map((typ) => (
               <>
                 <p style={{ textDecoration: 'underline', margin: '0rem 0' }}>
@@ -75,24 +72,21 @@ function GetDataFromServer({ apiURL }) {
     </div>
   ));
 
-  return (
-    <>
+  return(
+<>{ word === '' ? (
+   ( <div className="wrapper">
+      <span>Type in your word in the search</span>
+    </div>)
+  ) : 
+    (<>
       <div className="wrapper">
-        <div class="dummyDiv" style={style}></div>
-        {content}
-        <div class="dummyDiv" style={style}></div>
+        <div class="dummyDiv"></div>
+        <span>{content}</span>
+        <div div class="dummyDiv"></div>
       </div>
-    </>
-  );
+    </>)
+  }</>)
+
 }
 
-// design for dummy divs in order to get a margin btw. the scrolling frame and the cards
-const style = {
-  height: '26rem',
-  width: '0.1rem',
-  margin: '0 0.1rem',
-  border: '1px solid #ebe6e6',
-  backgroundColor: '#ebe6e6',
-};
-
-export default GetDataFromServer;
+export default MeaningCards;

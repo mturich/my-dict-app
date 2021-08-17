@@ -7,17 +7,19 @@ import MeaningCards from './adapters/MeaningCards.js';
 //import './App.js';
 
 function App() {
+  const [meanings, setMeanings] = useState([]);
   const [category, setCategory] = useState('en');
-  const [word, setWord] = useState('test');
-
-  const API_URL = `https://api.dictionaryapi.dev/api/v2/entries/${category}/${word}`;
-  console.log(API_URL);
+  const [word, setWord] = useState('');
 
   return (
     <div className="App" style={{ height: '100vh', color: 'black' }}>
       <Container
-        maxWidth="md"
-        style={{ display: 'flex', flexDirection: 'column', height: '100%' }}
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          height: '100%',
+          padding: '0',
+        }}
       >
         <Header />
         <InputFields
@@ -26,7 +28,13 @@ function App() {
           word={word}
           setWord={setWord}
         />
-        <MeaningCards apiURL={API_URL} />
+
+        <MeaningCards
+          meanings={meanings}
+          word={word}
+          setMeanings={setMeanings}
+          category={category}
+        />
       </Container>
     </div>
   );

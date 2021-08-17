@@ -1,31 +1,41 @@
 .wrapper {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: column; */
   height: 22rem;
   width: 100%;
-  background-color: #ebe6e6;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
   margin: auto;
+  background-color: #ebe6e6;
+  overflow-y: auto;
   flex-wrap: wrap;
+  scroll-snap-type: y mandatory;
+  
 }
+
 
 #CardsBackground {
   font-family: Cavea, sans-serif;
   font-size: 1rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   width: 90%;
   height: 19rem;
-  overflow-y: auto;
-
-  margin: auto 6rem;
+  margin: 2rem auto;
   background-color: #ffff88;
-
+  
   scroll-snap-align: center;
   scroll-snap-stop: always;
   box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.5);
+}
+
+.dummyDiv {
+
+  height: 1rem;
+  min-width: 12rem;
+  margin: 0 auto;
+  /* border: 1px solid #ebe6e6; */
+  border: 1px solid #000;
+  background-color: #ebe6e6;
 }
 
 #CardHeading {
@@ -45,13 +55,19 @@
   width: 100%;
   display: flex;
   align-items: center;
-  overflow-x: auto;
   margin: auto;
   padding: 0.5em;
   scrollbar-color: grey #ffff88;
+  overflow-y: auto;
 }
 
 @media screen and (min-width: 33em) {
+  .wrapper {
+    height: 32rem;
+    width: 90%;
+    margin: auto;
+  }
+
   #CardsBackground {
     font-size: clamp(1.2rem, 1.2rem, 1.5rem);
     height: 28rem;
@@ -67,17 +83,7 @@
     width: 100%;
     display: flex;
     align-items: center;
-    overflow-x: auto;
     margin: auto;
     padding: 0.5em 1em;
   }
-
-  .wrapper {
-    height: 32rem;
-    width: 90%;
-    margin: auto;
-  }
-
- 
-  
 }
