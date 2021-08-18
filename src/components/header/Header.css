@@ -10,12 +10,12 @@
 }
 
 .title {
-  width: 80%;
+  width: 70%;
   font-size: 1rem;
   font-family: Monteserrat, sans-serif;
   text-transform: uppercase;
   line-height: 1rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   margin: 1rem;
   position: relative;
 }
@@ -27,15 +27,20 @@
   padding: 0 min(10%, 1rem);
 }
 
-span.MuiSwitch-root{
+/* span.MuiSwitch-root*/
+div.switch--lightDark{ 
   position: absolute;
-  color:black;
   top: 0.5em;
   right:2px;
-  color:black
+  
 }
-span.MuiSwitch-root:checked
-{color:back}
+
+.switch__label{
+  font-size: 0.7em;
+  display: none; 
+}
+
+/* *{border: 1px solid black} */
 
 @media screen and (min-width: 33em) {
   .title {
@@ -45,11 +50,16 @@ span.MuiSwitch-root:checked
     transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.7s;
   }
 
-  span.MuiSwitch-root{
+  /* span.MuiSwitch-root */
+  div.switch--lightDark{
 
-    top: 2.5em;
+    top: 0.5em;
     right:0;
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.7s;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.7s; 
   
+  }
+  .switch__label{
+    display: inline;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.7s;
   }
 }

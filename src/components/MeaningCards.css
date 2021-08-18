@@ -1,12 +1,7 @@
 .wrapper {
-  /* display: flex;
-  justify-content: center;
-  flex-direction: column;
-  flex-wrap: wrap; */
   width: 100%;
   background-color: var(--scrollBoxColor);
-  scrollbar-color: #434242 var(--scrollBoxColor);
-  z-index: 10;
+  scrollbar-color: var(--ScrollBarColor) var(--scrollBoxColor);
 }
 
 .wrapper--large {
@@ -21,98 +16,88 @@
   margin: 0 auto;
 }
 
+
+
 .Cards {
+  display: flex;
+  flex-direction: column;
   font-family: Cavea, sans-serif;
   font-size: 1rem;
-  display: flex;
-  flex-direction: row;
+  height: 19rem;
   width: 90%;
   margin: 2rem auto;
-  background-color: var(--cardColor);
-  height: 19rem;
+  position: relative;
   scroll-snap-align: center;
-  /* scroll-snap-stop: always; */
-  position:relative;
-  z-index: -1;
 }
 
 .Cards::before,
-.Cards::after
-{
-  content:'';
+.Cards::after {
+  content: '';
   position: absolute;
   top: 93%;
-  bottom: 16px;
-  box-shadow: 0 10px 35px var(--BoxShadowColor);
-  z-index: 0;
+  bottom: 20px;
+  box-shadow: 0 18px 18px var(--BoxShadowColor);
+  z-index: 1;
 }
 
-.Cards::before{
-  background-color:var(--cardColor);
+.Cards::before {
+  background-color: var(--cardColor);
   left: 5px;
   right: 45px;
   transform: rotate(-3deg);
-  
 }
 
-.Cards::after{
+.Cards::after {
   background-color: aqua;
   left: 45px;
   right: 5px;
   transform: rotate(3deg);
-  z-index: 0;
-} 
+}
 
-/* .dummyDiv {
-  height: 1rem;
-  min-width: 12rem;
-  margin: 0 auto;
-  
-  background-color: #ebe6e6;
-} */
-
-.CardHeading {
+.card--head {
   display: flex;
+  background-color: var(--cardColor);
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 10%;
   margin: auto;
+  padding: 0.2em 0;
   border-bottom: 1px solid black;
   font-size: 1.2rem;
   text-decoration: underline;
-  z-index: 2;
-
 }
 
-.CardContext {
+
+
+.card--context {
   height: 100%;
   width: 100%;
-
   display: flex;
   flex-direction: column;
   justify-content: left;
-  /* align-items: center; */
-  /* margin: auto 0; */
-  padding: 0.5em;
+  padding: 1em 0.5em;
+  margin: auto;
   font-size: 1rem;
-  scrollbar-color: var(--ScrollBarColor) var(--cardColor);
+  /* scrollbar-color: var(--ScrollBarColor) var(--cardColor); */
+  background-color: var(--cardColor);
   overflow-y: auto;
   z-index: 2;
-
 }
 
 .emptyWrapperText {
   font-size: 2rem;
-  color: var(--EmptyBox_TextColor);
+  padding-top: 0;
+  padding-left: 0.3em;
+  
 }
 
 @media screen and (min-width: 33em) {
   .wrapper--large {
     height: 32rem;
-    }
+  }
 
-  .wrapper{
+  .wrapper {
     width: 90%;
   }
 
@@ -130,6 +115,6 @@
     height: 100%;
     width: 100%;
     margin: 0 auto;
-    padding: 0.5em 1em;
+    padding: 1em 1em;
   }
 }

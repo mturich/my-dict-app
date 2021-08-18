@@ -10,29 +10,30 @@ import categories from './data/languagesCat.js';
 
 import './InputFields.css';
 
-const Header = ({ category, setCategory, word, setWord }) => {
+const Header = ({ category, setCategory, word, setWord, LightMode }) => {
   const darkTheme = createTheme({
     palette: {
       primary: {
         main: '#000',
       },
-      type: 'light',
+      type:  LightMode ? 'light' : 'dark',
     },
   });
 
   return (
     <div className="InputFieldContainer">
       <div className="inputs">
-        <ThemeProvider theme={darkTheme}>
+        <ThemeProvider theme={darkTheme} >
           <TextField
             id="input-with-icon-adornment"
             className="search input"
             value={word}
             onInput={(e) => setWord(e.target.value)}
             label=""
+            
             InputProps={{
               startAdornment: (
-                <InputAdornment position="start">
+                <InputAdornment  position="start">
                   <SearchIcon />
                 </InputAdornment>
               ),
@@ -49,8 +50,8 @@ const Header = ({ category, setCategory, word, setWord }) => {
             helperText=""
             InputProps={{
               startAdornment: (
-                <InputAdornment position="start">
-                  <TranslateIcon />
+                <InputAdornment style={{ color: LightMode ? '#000' : '#fff' }} position="start">
+                  <TranslateIcon style={{ color: LightMode ? '#000' : '#fff' }} />
                 </InputAdornment>
               ),
             }}

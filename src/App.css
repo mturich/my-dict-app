@@ -3,15 +3,21 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
 
+
 :root{
   --BreakPointScreen: 33em;
   --cardColor: #ffff88;
-  --BackgroundColor: white;
-  --scrollBoxColor: #ebe6e6;
+  --cardColor: #7c7c1b;
+  --BackgroundColor: #ffffff;
+  --scrollBoxColor: #f0f0f0;
+  /* --scrollBoxColor: #727272; */
+
   --EmptyBox_TextColor: rgb(51, 51, 51);
-  --ScrollBarColor: #434242;
-  --BoxShadowColor:rgba(0, 0, 0, 0.5);
+  /* --ScrollBarColor: #434242; */
+  --ScrollBarColor: #b1aeae;
+  --BoxShadowColor:#00000080;
 }
+
 
 *, *::before, *::after {
   margin: 0;
@@ -26,9 +32,14 @@ body {
     'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: white;
+  background-color: var(--BackgroundColor);
 }
 
-*{
-   /* border: 1px solid black;  */
+.audioplayer{
+    height: 100%;
+    width: 100%;
+    border-radius: 5;
+    margin: auto;
+
 }
+
