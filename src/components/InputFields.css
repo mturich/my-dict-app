@@ -1,13 +1,12 @@
-.InputFields {
+.InputFieldContainer {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   /* align-items: center;
   text-align: center; */
-  margin-top: auto;
+  /* margin-top: auto; */
 }
-
 
 .inputs {
   display: flex;
@@ -15,34 +14,29 @@
   justify-content: space-between;
   width: 90%;
   margin: 0.5em auto;
-  
-
+  gap: 2em;
 }
 
 .inputs > * {
-  flex-basis: calc(calc(440px - 100%) * 999);
+  flex-basis: calc(calc(600px - 100%) * 999);
   flex-grow: 1;
-  margin-left: 1em;
+  /* margin-left: 1em;
   margin-right: 1em;
-  margin-bottom: auto;
+  margin-bottom: auto; */
 }
 
-.MuiFormControl-root {
+/* .MuiFormControl-root {
   margin-block: 1em;
   margin-top: auto;
-}
-
+} */
 
 @media screen and (min-width: 33em) {
-.InputFields{
-  /* margin-block: 2em; */
-}
-
+  .InputFieldContainer {
+    margin-top: auto;
+  }
 
   .inputs {
-
-    margin: 1em auto;
-
+    margin: 2em auto;
   }
 
   .inputs > div {
@@ -51,5 +45,5 @@
 
   .inputs > div:is(.search) {
     max-width: 60%;
-  } 
+  }
 }

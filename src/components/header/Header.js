@@ -1,7 +1,13 @@
 import React from 'react';
 import { createTheme, Switch } from '@material-ui/core';
+import { StylesProvider } from '@material-ui/core/styles';
 
 import './Header.css';
+
+<StylesProvider injectFirst>
+  {/* Your component tree.
+      Now, you can override Material-UI's styles. */}
+</StylesProvider>;
 
 const Header = () => {
   const darkTheme = createTheme({
@@ -25,10 +31,14 @@ const Header = () => {
     <div className="header">
       <span className="title">Get the meaning of words. Instantly !</span>
       <Switch
+        className="darkModeToggle"
+        id="darkModeToggle"
         checked={state.checkedA}
         onChange={handleChange}
         name="checkedA"
-        inputProps={{ 'aria-label': 'secondary checkbox' }}
+        color="primary"
+        
+        inputProps={{ 'aria-label': 'primary checkbox'  }}
       />
 
       <span id="line"></span>

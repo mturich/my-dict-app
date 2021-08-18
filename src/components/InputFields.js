@@ -1,17 +1,16 @@
 import React from 'react';
 import { createTheme, MenuItem, ThemeProvider } from '@material-ui/core';
 
-
 import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import SearchIcon from '@material-ui/icons/Search';
 import TranslateIcon from '@material-ui/icons/Translate';
 
 import categories from './data/languagesCat.js';
+
 import './InputFields.css';
 
-
-const Header = ({category, setCategory , word, setWord}) => {
+const Header = ({ category, setCategory, word, setWord }) => {
   const darkTheme = createTheme({
     palette: {
       primary: {
@@ -22,18 +21,15 @@ const Header = ({category, setCategory , word, setWord}) => {
   });
 
   return (
-    <div className="InputFields" >
-      <div
-        className="inputs"
-      >
+    <div className="InputFieldContainer">
+      <div className="inputs">
         <ThemeProvider theme={darkTheme}>
           <TextField
-            id='input-with-icon-adornment'
+            id="input-with-icon-adornment"
             className="search"
             value={word}
-            onInput={(e)=>setWord(e.target.value)}
+            onInput={(e) => setWord(e.target.value)}
             label="Search a word"
-           
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
@@ -50,7 +46,6 @@ const Header = ({category, setCategory , word, setWord}) => {
             value={category}
             onChange={(e) => setCategory(e.target.value)}
             helperText=""
-
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
@@ -58,7 +53,6 @@ const Header = ({category, setCategory , word, setWord}) => {
                 </InputAdornment>
               ),
             }}
-           
           >
             {categories.map((cat) => (
               <MenuItem key={cat.label} value={cat.label}>
@@ -66,7 +60,6 @@ const Header = ({category, setCategory , word, setWord}) => {
               </MenuItem>
             ))}
           </TextField>
-
         </ThemeProvider>
       </div>
     </div>

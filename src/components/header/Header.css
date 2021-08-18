@@ -6,6 +6,7 @@
   align-items: center;
   text-align: center;
   margin: 0 auto;
+
 }
 
 .title {
@@ -15,6 +16,7 @@
   line-height: 1rem;
   letter-spacing: 0.1em;
   margin: 1rem;
+  position: relative;
 }
 
 #line {
@@ -23,6 +25,16 @@
   margin: 0 1rem;
   padding: 0 min(10%, 1rem);
 }
+
+span.MuiSwitch-root{
+  position: absolute;
+  color:black;
+  top: 1em;
+  right:1em;
+  color:black
+}
+span.MuiSwitch-root:checked
+{color:back}
 
 @media screen and (min-width: 33em) {
   .title {
