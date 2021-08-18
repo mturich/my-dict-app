@@ -4,7 +4,7 @@ import { Container } from '@material-ui/core';
 import InputFields from './components/InputFields.js';
 import Header from './components/header/Header.js';
 import MeaningCards from './components//MeaningCards.js';
-import GetMeaning from './adapters/GetMeaning.js';
+
 
 
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import './GetMeaning.css';
+
 
 function GetMeaning({ word, category, setMeanings }) {
   const API_URL = `https://api.dictionaryapi.dev/api/v2/entries/${category}/${word}`;
