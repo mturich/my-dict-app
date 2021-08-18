@@ -26,10 +26,10 @@ const Header = ({ category, setCategory, word, setWord }) => {
         <ThemeProvider theme={darkTheme}>
           <TextField
             id="input-with-icon-adornment"
-            className="search"
+            className="search input"
             value={word}
             onInput={(e) => setWord(e.target.value)}
-            label="Search a word"
+            label=""
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
@@ -37,12 +37,13 @@ const Header = ({ category, setCategory, word, setWord }) => {
                 </InputAdornment>
               ),
             }}
-          />
+          ></TextField>
 
           <TextField
             id="standard-select-currency"
+            class="selector input"
             select
-            label="Select"
+            label=""
             value={category}
             onChange={(e) => setCategory(e.target.value)}
             helperText=""
@@ -54,6 +55,7 @@ const Header = ({ category, setCategory, word, setWord }) => {
               ),
             }}
           >
+        
             {categories.map((cat) => (
               <MenuItem key={cat.label} value={cat.label}>
                 {cat.value}

@@ -4,8 +4,9 @@
   flex-direction: column;
   flex-wrap: wrap; */
   width: 100%;
-  background-color: #ebe6e6;
-  
+  background-color: var(--scrollBoxColor);
+  scrollbar-color: #434242 var(--scrollBoxColor);
+  z-index: 10;
 }
 
 .wrapper--large {
@@ -17,30 +18,58 @@
 
 .wrapper--audio {
   height: 1rem;
-  margin: auto auto 0;
+  margin: 0 auto;
 }
 
 .Cards {
   font-family: Cavea, sans-serif;
   font-size: 1rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 90%;
   margin: 2rem auto;
-  background-color: #ffff88;
+  background-color: var(--cardColor);
   height: 19rem;
   scroll-snap-align: center;
   /* scroll-snap-stop: always; */
-  box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.5);
+  position:relative;
+  z-index: -1;
 }
 
-.dummyDiv {
+.Cards::before,
+.Cards::after
+{
+  content:'';
+  position: absolute;
+  top: 93%;
+  bottom: 16px;
+  box-shadow: 0 10px 35px var(--BoxShadowColor);
+  z-index: 0;
+}
+
+.Cards::before{
+  background-color:var(--cardColor);
+  left: 5px;
+  right: 45px;
+  transform: rotate(-3deg);
+  
+}
+
+.Cards::after{
+  background-color: aqua;
+  left: 45px;
+  right: 5px;
+  transform: rotate(3deg);
+  z-index: 0;
+} 
+
+/* .dummyDiv {
   height: 1rem;
   min-width: 12rem;
   margin: 0 auto;
-  /* border: 1px solid #ebe6e6; */
+  
   background-color: #ebe6e6;
-}
+} */
 
 .CardHeading {
   display: flex;
@@ -52,31 +81,36 @@
   border-bottom: 1px solid black;
   font-size: 1.2rem;
   text-decoration: underline;
+  z-index: 2;
+
 }
 
 .CardContext {
   height: 100%;
   width: 100%;
+
   display: flex;
   flex-direction: column;
   justify-content: left;
   /* align-items: center; */
   /* margin: auto 0; */
   padding: 0.5em;
-  scrollbar-color: grey #ffff88;
+  font-size: 1rem;
+  scrollbar-color: var(--ScrollBarColor) var(--cardColor);
   overflow-y: auto;
+  z-index: 2;
+
 }
 
 .emptyWrapperText {
   font-size: 2rem;
-  color: rgb(51, 51, 51);
+  color: var(--EmptyBox_TextColor);
 }
 
 @media screen and (min-width: 33em) {
   .wrapper--large {
     height: 32rem;
-    
-  }
+    }
 
   .wrapper{
     width: 90%;

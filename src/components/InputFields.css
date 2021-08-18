@@ -3,47 +3,87 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-items: center;
-  text-align: center; */
-  /* margin-top: auto; */
+  margin-block: auto;
 }
 
 .inputs {
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex;
+  flex-direction: column; */
+  /* flex-wrap: wrap; */
   justify-content: space-between;
   width: 90%;
-  margin: 0.5em auto;
-  gap: 2em;
+  margin: 0 auto;
+  padding-bottom: 0.5em;
+  gap: 1rem;
 }
 
 .inputs > * {
-  flex-basis: calc(calc(600px - 100%) * 999);
-  flex-grow: 1;
-  /* margin-left: 1em;
-  margin-right: 1em;
-  margin-bottom: auto; */
+  /* flex-basis: calc(calc(550px - 100%) * 999);
+  flex-grow: 1; */
+
+  margin-bottom: auto;
 }
 
-/* .MuiFormControl-root {
-  margin-block: 1em;
-  margin-top: auto;
+.input {
+  width: 100%;
+}
+
+
+.selector > div.MuiInputBase-root {
+   width: 100%; 
+  margin-top: 1rem;
+}
+/* .search > .MuiInputBase-root {
+  width: 100%;
 } */
+
+/* Style the language Selector */
+/* div.MuiInputBase-root {
+  width: 100%;
+} */
+/* Style the text inside the input */
+#input-with-icon-adornment {
+  padding-bottom: 1px;
+}
+/* Style the text inside the language selector */
+#standard-select-currency {
+  width: 100%;
+  padding-bottom: 1px;
+}
+/* Style the label of the language selector */
+#standard-select-currency-label {
+  position: relative;
+}
 
 @media screen and (min-width: 33em) {
   .InputFieldContainer {
     margin-top: auto;
   }
-
+  * {
+    border: 1px solid black;
+  }
   .inputs {
     margin: 2em auto;
+    gap: 0 2rem;
   }
 
-  .inputs > div {
-    max-width: 30%;
+  .input {
+    width: 70%;
+  }
+  .selector {
+    float: right;
+    width: 20%;
   }
 
-  .inputs > div:is(.search) {
-    max-width: 60%;
+  .selector > div.MuiInputBase-root {
+    max-width: 100%;
+    margin-top: 0;
+  }
+
+  .search > .MuiInputBase-root {
+    width: 100%;
+  }
+  .input > * {
+    clear: both;
   }
 }

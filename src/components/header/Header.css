@@ -10,6 +10,7 @@
 }
 
 .title {
+  width: 80%;
   font-size: 1rem;
   font-family: Monteserrat, sans-serif;
   text-transform: uppercase;
@@ -29,8 +30,8 @@
 span.MuiSwitch-root{
   position: absolute;
   color:black;
-  top: 1em;
-  right:1em;
+  top: 0.5em;
+  right:2px;
   color:black
 }
 span.MuiSwitch-root:checked
@@ -41,7 +42,14 @@ span.MuiSwitch-root:checked
     padding: 1rem 0;
     letter-spacing: 0.2em;
     margin: 2rem;
-    background-color: aqua;
     transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.7s;
+  }
+
+  span.MuiSwitch-root{
+
+    top: 2.5em;
+    right:0;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.7s;
+  
   }
 }

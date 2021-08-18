@@ -1,9 +1,11 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './MeaningCards.css';
-import ReactAudioPlayer from 'react-audio-player';
+
 
 function MeaningCards({ word, category, setMeanings, meanings}) {
+  const [err, setErr] = useState('');
+  
   const API_URL = `https://api.dictionaryapi.dev/api/v2/entries/${category}/${word}`;
 
   useEffect(() => {
@@ -15,9 +17,10 @@ function MeaningCards({ word, category, setMeanings, meanings}) {
       } catch (error) {
         if (error.response) {
           // response status code falls out of 2xx range
-          // console.log(error.response.data);
-          // console.log(error.response.status);
-          // console.log(error.response.headers);
+          console.log(error.response.data);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+          
         } else if (error.request) {
           // after request was made no response was recieved
           console.log(error.request);
@@ -25,17 +28,14 @@ function MeaningCards({ word, category, setMeanings, meanings}) {
           // all other errors
           console.log(error.message);
         }
+        // setErr(error);
       }
     };
 
     fetchData();
   }, [API_URL, setMeanings]);
   
-  
-  // const phonetic = (meanings[0].phonetics[0] === '') ? 'no audio available' : meanings[0].phonetics[0].audio;
-  
-  // console.log(meanings[0].phonetics[0]!=='')
-  
+   
   const content = meanings.map((meaning, index) => (
     <>
       <div class="Cards">
@@ -82,44 +82,43 @@ function MeaningCards({ word, category, setMeanings, meanings}) {
     </>
   ));
 
-  return (
-    <>
-      {/* If no word has been entered in search print hint how to use the app */}
-      {word === '' ? (
+ return (
+  (word === '') ?
+  (<div className="wrapper wrapper--large">
+    <span className="emptyWrapperText">
+      start word seach by typping in the search bar{' '}
+    </span>
+  </div>
+  )
+  : (
+    (category === 'en' && !!meanings[0]) ? (
+      /* If english is the language and the audio track is available, show audio track */
+      <>
+        <div
+          class="wrapper wrapper--audio"
+        >
+          <audio controls src={meanings[0].phonetics[0].audio} style={{ height: '100%', width: '100%', borderRadius: 5, margin: 'auto' }}>
+            Your browser does not support the audio tag.
+          </audio>
+        </div>
+    
         <div className="wrapper wrapper--large">
-          <span className="emptyWrapperText">
-            start word seach by typping in the search bar{' '}
-          </span>
-        </div>)
-        : (category === 'en' && !!meanings[0]) ? (
-          <>
-            {/* If english is the language and the audio track is available, show audio track */ }
-            <div
-              class="wrapper wrapper--audio"
-            >
-            <audio controls src={meanings[0].phonetics[0].audio} style={{ height: '100%', width:'100%', borderRadius: 5, margin:'auto' }}>
-                     Your browser does not support the audio tag.
-                  </audio>
-            </div>
-            
-             <div className="wrapper wrapper--large">
-               {/* <div class="dummyDiv"></div> */}
-               <span>{content}</span>
-               {/* <div div class="dummyDiv"></div> */}
-             </div>
-           </>
-        )
-          : (<>
-             {/* show no audio track for all other languages */ }
-          <div className="wrapper wrapper--large">
-            <div class="dummyDiv"></div>
-            <span>{content}</span>
-            <div div class="dummyDiv"></div>
-          </div>
-        </>
-      )}
-    </>
-  );
+          {/* <div class="dummyDiv"></div> */}
+          <span>{content}</span>
+          {/* <div div class="dummyDiv"></div> */}
+        </div>
+      </>
+    )
+      : (
+        /* show no audio track for all other languages */
+        <div className="wrapper wrapper--large">
+          {/* <div class="dummyDiv"></div> */}
+          <span>{content}</span>
+          {/* <div div class="dummyDiv"></div> */}
+        </div>
+      ))
+
+  )
 }
 
 export default MeaningCards;

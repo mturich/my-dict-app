@@ -5,6 +5,12 @@
 
 :root{
   --BreakPointScreen: 33em;
+  --cardColor: #ffff88;
+  --BackgroundColor: white;
+  --scrollBoxColor: #ebe6e6;
+  --EmptyBox_TextColor: rgb(51, 51, 51);
+  --ScrollBarColor: #434242;
+  --BoxShadowColor:rgba(0, 0, 0, 0.5);
 }
 
 *, *::before, *::after {
@@ -24,5 +30,5 @@ body {
 }
 
 *{
-   border: 1px solid black; 
+   /* border: 1px solid black;  */
 }
