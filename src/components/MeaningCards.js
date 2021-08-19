@@ -56,7 +56,7 @@ function MeaningCards({ word, category, setMeanings, meanings, LightMode}) {
         /* If english is the language and the audio track is available, show audio track */
         output = (
           <>
-            <div class="wrapper wrapper--audio" >
+            <div class="wrapper wrapper--audio" style={{ backgroundColor: LightMode ? '#fff' : '#282c34' }} >
               <ReactAudioPlayer
                 className="audioplayer"
                 src={meanings[0].phonetics[0].audio}
