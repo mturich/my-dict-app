@@ -16,6 +16,13 @@
   margin: 0 auto;
 }
 
+.audioplayer{
+  height: 1rem;
+  width: 100%;
+  border-radius: 5px;
+  margin: auto;
+}
+
 .Cards {
   display: flex;
   flex-direction: column;
