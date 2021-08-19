@@ -1,19 +1,18 @@
 import { Switch, withStyles } from '@material-ui/core';
 
 import './Header.css';
-import { grey } from '@material-ui/core/colors';
+import { grey, yellow, black } from '@material-ui/core/colors';
 
 // Ganz WICHTIG DIE DÄMLICHEN KLAMMERN darum machen
-const Header = ({LightMode, setLightMode}) => {
-
+const Header = ({ LightMode, setLightMode }) => {
   const LightModeSwitch = withStyles({
     switchBase: {
-      color: grey[200],
+      color: grey[100],
       '&$checked': {
-        color: grey[600],
+        color: yellow[100],
       },
       '&$checked + $track': {
-        backgroundColor: grey[400],
+        backgroundColor: grey[200],
       },
     },
     checked: {},
@@ -31,10 +30,16 @@ const Header = ({LightMode, setLightMode}) => {
         <span class="switch__label">
           {LightMode ? 'light mode' : 'dark mode'}
         </span>
-        <LightModeSwitch checked={LightMode} onChange={() => setLightMode(!LightMode)} />
+        <LightModeSwitch
+          checked={LightMode}
+          onChange={() => setLightMode(!LightMode)}
+        />
       </div>
 
-      <span id="line" style={{borderBottomColor: LightMode ? '#000' : '#fff',}}></span>
+      <span
+        id="line"
+        style={{ borderBottomColor: LightMode ? '#000' : '#fff' }}
+      ></span>
     </div>
   );
 };

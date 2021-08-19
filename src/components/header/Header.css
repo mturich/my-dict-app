@@ -46,17 +46,17 @@ div.switch--lightDark {
     letter-spacing: 0.2em;
     margin: 2rem;
     /* transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.7s; */
-    transition: all ease-in-out 500ms;
+    transition: all ease-in-out 200ms;
   }
 
   /* span.MuiSwitch-root */
   div.switch--lightDark {
     top: 0.5em;
     right: 0;
-    transition: all ease-in-out 500ms;
+    
   }
   .switch__label {
     display: inline;
-    transition: all ease-in-out 500ms;
+  
   }
 }
