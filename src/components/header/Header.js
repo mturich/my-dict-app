@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import { Switch, withStyles } from '@material-ui/core';
 
 import './Header.css';
