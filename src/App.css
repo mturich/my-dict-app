@@ -10,11 +10,12 @@
   --cardColor: #7c7c1b;
   --BackgroundColor: #ffffff;
   --scrollBoxColor: #f0f0f0;
-  /* --scrollBoxColor: #727272; */
+
 
   --EmptyBox_TextColor: rgb(51, 51, 51);
   /* --ScrollBarColor: #434242; */
   --ScrollBarColor: #b1aeae;
+  --ScrollBarColor: #473e29;
   --BoxShadowColor:#00000080;
 }
 

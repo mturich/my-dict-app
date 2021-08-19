@@ -8,7 +8,7 @@
 
 .inputs {
   justify-content: space-between;
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
   padding-bottom: 0.5em;
   gap: 1rem;
@@ -17,6 +17,7 @@
 
 .input {
   width: 100%;
+  
 }
 
 .selector > div.MuiInputBase-root {
@@ -26,7 +27,9 @@
 
 /* Style the text inside the input */
 #input-with-icon-adornment {
-  padding-bottom: 1px;
+  padding-bottom: 3px;
+  font-size: 1rem;
+  text-transform: capitalize;
 }
 /* Style the text inside the language selector */
 #standard-select-currency {

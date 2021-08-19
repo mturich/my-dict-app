@@ -1,19 +1,14 @@
-
-
-
 function Content({ meanings, LightMode }) {
-  return (meanings.map((meaning, index) => (
-    <div
-      class="Cards"
-    >
+  return meanings.map((meaning, index) => (
+    <div class="Cards">
       <div
         class="card--head"
         style={{
           color: LightMode ? 'black' : 'black',
-          backgroundColor: LightMode ? '#ffff88':'#7c7c1b',
+          backgroundColor: LightMode ? '#fff' : '#727272',
         }}
       >
-        {`Meaning ${index + 1} :        ${meaning.word}`}
+        {`Meaning ${index + 1}: ${meaning.word}`}
       </div>
 
       <div
@@ -21,8 +16,9 @@ function Content({ meanings, LightMode }) {
         key={meaning.label}
         value={meaning.label}
         style={{
-          backgroundColor: LightMode ? '#ffff88':'#7c7c1b',
+          backgroundColor: LightMode ? '#fff' : '#727272',
           color: LightMode ? 'black' : 'black',
+          scrollbarColor: LightMode ? '#757575 #fff' : '#fff #000' ,
         }}
       >
         <>
@@ -55,8 +51,7 @@ function Content({ meanings, LightMode }) {
         </>
       </div>
     </div>
-  )));
-
+  ));
 }
 
 export default Content;

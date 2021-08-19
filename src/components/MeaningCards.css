@@ -1,7 +1,7 @@
 .wrapper {
   width: 100%;
-  background-color: var(--scrollBoxColor);
-  scrollbar-color: var(--ScrollBarColor) var(--scrollBoxColor);
+  /* background-color: var(--scrollBoxColor); */
+  scrollbar-color: #fff var(--scrollBoxColor);
 }
 
 .wrapper--large {
@@ -23,7 +23,7 @@
 
 .audioplayer{
   height: 80%;
-  width: 100%;
+  width: 90%;
   border-radius: 15px;
   margin: 0;
   padding:0;
@@ -36,7 +36,7 @@
   font-size: 1rem;
   height: 19rem;
   width: 90%;
-  margin: 2rem auto;
+  margin: 3rem auto;
   position: relative;
   scroll-snap-align: center;
 }
@@ -73,8 +73,8 @@
   width: 100%;
   height: 10%;
   margin: auto;
-  padding: 0.2em 0;
-  border-bottom: 1px solid black;
+  padding: 1em 0 0.5em;
+  /* border-bottom: 1px solid black; */
   font-size: 1.2rem;
   text-decoration: underline;
 }
@@ -85,7 +85,7 @@
   display: flex;
   flex-direction: column;
   justify-content: left;
-  padding: 1em 0.5em;
+  padding: 1em 2em;
   padding-right: 1.5em;
   margin: auto;
   font-size: 1rem;

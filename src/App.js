@@ -18,6 +18,7 @@ function App() {
       className="App"
       style={{
         backgroundColor: LightMode ? '#fff' : '#282c34',
+        backgroundColor: LightMode ? '#ffd469' : '#282c34',
         color: LightMode ? '#000' : '#fff',
         height: '100vh',
         

@@ -56,7 +56,8 @@ function MeaningCards({ word, category, setMeanings, meanings, LightMode}) {
         /* If english is the language and the audio track is available, show audio track */
         output = (
           <>
-            <div class="wrapper wrapper--audio" style={{ backgroundColor: LightMode ? '#fff' : '#282c34' }} >
+            <div class="wrapper wrapper--audio"
+            >
               <ReactAudioPlayer
                 className="audioplayer"
                 src={meanings[0].phonetics[0].audio}
@@ -67,7 +68,10 @@ function MeaningCards({ word, category, setMeanings, meanings, LightMode}) {
             </div>
 
             <div className="wrapper wrapper--large"
-              style={{ backgroundColor: LightMode ? '#f0f0f0' : '#727272' }}>
+              style={{
+                scrollbarColor: LightMode ? '#fff' : '#fff',
+              }}
+            >
               <Content meanings={meanings} LightMode={LightMode}/>
             </div>
           </>
@@ -76,7 +80,9 @@ function MeaningCards({ word, category, setMeanings, meanings, LightMode}) {
         /* show no audio track for all other languages */
         output = (
           <div className="wrapper wrapper--large"
-            style={{ backgroundColor: LightMode ? '#f0f0f0' : '#727272' }}>
+            style={{
+            
+              scrollbarColor: LightMode ? '#757575' : '#fff',}}>
            <Content meanings={meanings} LightMode={LightMode}/>
           </div>
         );
