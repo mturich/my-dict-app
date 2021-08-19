@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './MeaningCards.css';
 import Content from './data/CardTemplate';
+import ReactAudioPlayer from 'react-audio-player';
 
 
 function MeaningCards({ word, category, setMeanings, meanings, LightMode}) {
@@ -56,13 +57,13 @@ function MeaningCards({ word, category, setMeanings, meanings, LightMode}) {
         output = (
           <>
             <div class="wrapper wrapper--audio" >
-              <audio
+              <ReactAudioPlayer
                 className="audioplayer"
                 src={meanings[0].phonetics[0].audio}
                 controls
               >
                 Your browser does not support the audio tag.
-              </audio>
+              </ReactAudioPlayer>
             </div>
 
             <div className="wrapper wrapper--large"
