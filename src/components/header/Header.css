@@ -6,7 +6,6 @@
   align-items: center;
   text-align: center;
   margin: 0 auto;
-
 }
 
 .title {
@@ -28,16 +27,15 @@
 }
 
 /* span.MuiSwitch-root*/
-div.switch--lightDark{ 
+div.switch--lightDark {
   position: absolute;
   top: 1em;
-  right:2px;
-  
+  right: 2px;
 }
 
-.switch__label{
+.switch__label {
   font-size: 0.7em;
-  display: none; 
+  display: none;
 }
 
 /* *{border: 1px solid black} */
@@ -47,19 +45,18 @@ div.switch--lightDark{
     padding: 1rem 0;
     letter-spacing: 0.2em;
     margin: 2rem;
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.7s;
+    /* transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.7s; */
+    transition: all ease-in-out 500ms;
   }
 
   /* span.MuiSwitch-root */
-  div.switch--lightDark{
-
+  div.switch--lightDark {
     top: 0.5em;
-    right:0;
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.7s; 
-  
+    right: 0;
+    transition: all ease-in-out 500ms;
   }
-  .switch__label{
+  .switch__label {
     display: inline;
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.7s;
+    transition: all ease-in-out 500ms;
   }
 }

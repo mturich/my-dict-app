@@ -17,8 +17,9 @@ function App() {
     <div
       className="App"
       style={{
-        backgroundColor: LightMode ? '#fff' : '#282c34',
-        backgroundColor: LightMode ? '#ffd469' : '#282c34',
+
+        // backgroundColor: LightMode ? '#ffd469' : '#282c34',
+        background: LightMode ? 'linear-gradient(45deg, #d6a103, #Fec80c)' : '#282c34',
         color: LightMode ? '#000' : '#fff',
         height: '100vh',
         

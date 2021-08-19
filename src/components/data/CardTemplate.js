@@ -18,7 +18,7 @@ function Content({ meanings, LightMode }) {
         style={{
           backgroundColor: LightMode ? '#fff' : '#727272',
           color: LightMode ? 'black' : 'black',
-          scrollbarColor: LightMode ? '#757575 #fff' : '#fff #000' ,
+          scrollbarColor: LightMode ? '#473e29 #fff' : '#fff #727272',
         }}
       >
         <>
