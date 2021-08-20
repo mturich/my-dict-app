@@ -1,7 +1,7 @@
 import { Switch, withStyles } from '@material-ui/core';
 
 import './Header.css';
-import { grey, yellow, black } from '@material-ui/core/colors';
+import { grey, yellow } from '@material-ui/core/colors';
 
 // Ganz WICHTIG DIE DÄMLICHEN KLAMMERN darum machen
 const Header = ({ LightMode, setLightMode }) => {
@@ -18,10 +18,6 @@ const Header = ({ LightMode, setLightMode }) => {
     checked: {},
     track: {},
   })(Switch);
-
-  // const handleChange = () => {
-  //   setLightMode(!LightMode);
-  // };
 
   return (
     <div className="header">
